@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/home/bees/BotShot/Temp/gradleOut/libs/unity-classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.0"
+        sha1="116360dedc03cfc59dc9b68335d9bc64ac43a5f9">
+        <dex dex="/home/bees/BotShot/Temp/gradleOut/build/intermediates/pre-dexed/debug/unity-classes_caf2797bdd68c2d93eb7395299c070d84c973bb4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bees/BotShot/Temp/gradleOut/libs/VuforiaUnityPlayer.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.0"
+        sha1="95f5205a17a7546c265d4a27d1e6f8be7b6f3f03">
+        <dex dex="/home/bees/BotShot/Temp/gradleOut/build/intermediates/pre-dexed/debug/VuforiaUnityPlayer_be1c80ed3a56dd941ddd923229882710271b553e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bees/BotShot/Temp/gradleOut/libs/Vuforia.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.0"
+        sha1="be3db5d282d7094986c342631085ca4d84c02603">
+        <dex dex="/home/bees/BotShot/Temp/gradleOut/build/intermediates/pre-dexed/debug/Vuforia_b23038a75b95df5b0d9ec85a048f8d85c133bf79.jar" />
+    </item>
+
+</items>
