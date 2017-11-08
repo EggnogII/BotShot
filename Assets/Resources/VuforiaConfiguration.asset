@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
-    vuforiaLicenseKey: 
+    vuforiaLicenseKey: ATymCjf/////AAAAGTktc/tPp0IHnd2rLOfBlLA3hkb7zYNrETsF6oxYGmCfFXTvDxLKWAI8nV2fDDPVXdoqOIDWuQnkajOnHeEizoP+GW0+gHkt0+Lr+ZPa6Y4Gxyl3ZEV9cQUR3tId59AZyOG83HOo8JMcvL1Goxs7wXveoZGmAnAovdqVYImiQsuoInQN/GfL22xZz1ZNF5EVSMZ4TYyGNAYnSdKT4ZxmABE3Q/iICCuXuT9ae8rXvaqJMu8IswQCXv6U/P1fIU86z+fkhda4WikM1k9W7f872IwgXUAdugwgXA+m3Wpv+zDDyqY8CzbCyVoRq+LrHQz98dLF1O5nX4OfwiweEk0P4fMepM+mrC/tg30w9uCQ7WNY
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
     maxSimultaneousImageTargets: 1
@@ -55,8 +55,8 @@ MonoBehaviour:
     autoInitBuilder: 0
     sceneUnitsToMillimeter: 0
   deviceTracker:
-    autoInitTracker: 0
-    autoStartTracker: 0
+    autoInitTracker: 1
+    autoStartTracker: 1
     posePrediction: 0
     modelCorrectionMode: 0
     modelTransformEnabled: 0
@@ -64,5 +64,5 @@ MonoBehaviour:
   webcam:
     deviceNameSetInEditor: 
     flipHorizontally: 0
-    turnOffWebCam: 0
+    turnOffWebCam: 1
     renderTextureLayer: 30
