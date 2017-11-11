@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20bd32c908fa64f128ba22d2b6b7a094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mCubeObj: {fileID: 1693093064665656, guid: 87ad1161297074183b85dc59b2828fc8, type: 2}
+  mCubeObj: {fileID: 1094166164576046, guid: 87ad1161297074183b85dc59b2828fc8, type: 2}
   mTotalCubes: 10
   mTimeToSpawn: 1
 --- !u!4 &1008600653

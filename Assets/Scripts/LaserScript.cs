@@ -63,6 +63,21 @@ public class LaserScript : MonoBehaviour {
 		{
 			//Set the end of Laser Line to the object hit
 			mLaserLine.SetPosition(1, hit.point);
+
+			//Get CubeBehavior script to apply damage to target
+			//NOTE: This is where we would apply this damage to other targets as well
+			CubeBehaviorScript cubeCtr = hit.collider.GetComponent<CubeBehaviorScript>();
+			if (cubeCtr != null)
+			{
+				if (hit.rigidbody != null)
+				{
+					//Apply force to target
+					hit.rigidbody.AddForce(-hit.normal*mHitForce);
+
+					//Apply damage to target
+					cubeCtr.Hit(mLaserDamage);
+				}
+			}
 		}
 
 		else
@@ -74,6 +89,8 @@ public class LaserScript : MonoBehaviour {
 
 		//Show the Laser using a coroutine
 		StartCoroutine(LaserFX());
+
+
 	}
 
 	//Show Laser effects
