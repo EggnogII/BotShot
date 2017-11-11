@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotShot", "Assembly-CSharp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotShot", "Assembly-CSharp-Editor.csproj", "{CC6B6898-0E77-B4F9-0D1F-F728F457ADC9}"
 EndProject
+Project("{576E886B-54DA-AECB-38CE-5D0A3F3433C5}") = "BotShot", "Assembly-UnityScript-Editor-firstpass.unityproj", "{81970BA3-BE6C-3CE8-88F0-B0A61BE73F37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{CC6B6898-0E77-B4F9-0D1F-F728F457ADC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC6B6898-0E77-B4F9-0D1F-F728F457ADC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC6B6898-0E77-B4F9-0D1F-F728F457ADC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81970BA3-BE6C-3CE8-88F0-B0A61BE73F37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81970BA3-BE6C-3CE8-88F0-B0A61BE73F37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81970BA3-BE6C-3CE8-88F0-B0A61BE73F37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81970BA3-BE6C-3CE8-88F0-B0A61BE73F37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
