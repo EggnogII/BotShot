@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class CubeBehaviorScript : MonoBehaviour 
 {
+	//Cube Health
+	public int mCubeHealth = 100;
+
+	//Define if the Cube is Alive
+	private bool mIsAlive = true;
 
 	//Cube's Max/Min scale
 	public float mScaleMax = 2f;
@@ -28,6 +33,38 @@ public class CubeBehaviorScript : MonoBehaviour
 	public float mGrowingSpeed = 10f;
 	private bool mIsCubeScaled = false;
 
+	//Cube gets hit
+	//Return false when cube destroyed
+	public bool Hit(int hitDamage)
+	{
+		mCubeHealth -= hitDamage;
+		if (mCubeHealth >=  0 && mIsAlive)
+		{
+			StartCoroutine(DestroyCube());
+			return true;
+		}
+
+		return false;
+	}
+
+	//Destroy Cube
+	private IEnumerator DestroyCube()
+	{
+		mIsAlive = false;
+
+		//Make Cube Vanish
+		GetComponent<Renderer>().enabled = false;
+
+		/*
+			We'll wait some time before destroying the element
+			this is usefull when using some kind of effect
+			like an explosion sound effect.
+			in that case we could use the sound length as waiting time
+		*/
+
+		yield return new WaitForSeconds(0.5f);
+		Destroy(gameObject);
+	}
 
 	// Use this for initialization
 	void Start () {
