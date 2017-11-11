@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Playables;
 using UnityEngine;
 
 public class LaserScript : MonoBehaviour {
@@ -8,6 +9,7 @@ public class LaserScript : MonoBehaviour {
 	public float mFireRange = 50f;
 	public float mHitForce = 100f;
 	public int mLaserDamage = 100;
+	public AudioClip clip;
 
 	//Line render that will represent the Laser
 	private LineRenderer mLaserLine;
@@ -48,6 +50,8 @@ public class LaserScript : MonoBehaviour {
 		//Set the origin of the RayCast
 		Vector3 rayOrigin =  cam.position;
 
+		//GetComponent<AudioSource> ();
+		AudioSource.PlayClipAtPoint(clip, rayOrigin);
 		/*
 		Set the origin position of the Laser Line
 		It will always 10 units down from the ARCamera

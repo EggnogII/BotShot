@@ -13,7 +13,7 @@ public class SpawnScript : MonoBehaviour
 	public int mTotalCubes = 10;
 
 	// Time to spawn
-	public float mTimeToSpawn = 1f;
+	public float mTimeToSpawn = 0.8f;
 
 	// Hold all the cubes
 	private GameObject[] mCubes;
