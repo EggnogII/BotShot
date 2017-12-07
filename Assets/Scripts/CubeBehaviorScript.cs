@@ -1,50 +1,53 @@
-﻿using System.Collections;
+﻿//Created by Imran Irfan
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CubeBehaviorScript : MonoBehaviour 
 {
-	//Cube Health
-	public int mCubeHealth = 100;
-
-	//Define if the Cube is Alive
-	private bool mIsAlive = true;
-
-	//Cube's Max/Min scale
-	public float mScaleMax = 2f;
+	//Members
+	public int mCubeHealth = 100; //Cube Health
+	private bool mIsAlive = true; //Define if the Cube is Alive
+	public float mScaleMax = 2f; //Cube's Max/Min scale
 	public float mScaleMin = 0.5f;
-
-	//Orbit Max Speed
-	public float mOrbitMaxSpeed = 30f;
-
-	//Orbit speed
-	private float mOrbitSpeed;
-
-	//Anchor point for Cube Rotation
-	private Transform mOrbitAnchor;
-
-	//Max Cube Scale
-	private Vector3 mCubeMaxScale;
-
-	//Orbit Direction
-	private Vector3 mOrbitDirection;
-
-	//Growing Speed
-	public float mGrowingSpeed = 10f;
+	public float mOrbitMaxSpeed = 30f; //Orbit Max Speed
+	public int damage = 100; //Damage
+	private float mOrbitSpeed; //Orbit speed
+	private Transform mOrbitAnchor; //Anchor point for Cube Rotation
+	private Vector3 mCubeMaxScale; //Max Cube Scale
+	private Vector3 mOrbitDirection; //Orbit Direction
+	public float mGrowingSpeed = 10f; //Growing Speed
 	private bool mIsCubeScaled = false;
+	public Transform target; //USED for Moving Towards
+	public float speed;
 
 	//Cube gets hit
 	//Return false when cube destroyed
 	public bool Hit(int hitDamage)
 	{
-		mCubeHealth -= hitDamage;
-		if (mCubeHealth >=  0 && mIsAlive)
-		{
-			StartCoroutine(DestroyCube());
-			return true;
-		}
+		
+			mCubeHealth -= hitDamage;
+			if (mCubeHealth <= 0 && mIsAlive) {
+				StartCoroutine (DestroyCube ());
+				return true;
+			}
 
-		return false;
+			return false;
+
+	}
+
+	//Check if you hit the player
+	void CheckDistance()
+	{
+		float dist = Vector3.Distance (target.transform.position, transform.position);
+		if (dist < 1f) 
+		{
+			Handheld.Vibrate ();
+			var cam = GameObject.Find ("ARCamera");
+			cam.GetComponent<PlayerScript>().m_Health -= 1;
+			Destroy (gameObject);
+		}
 	}
 
 	//Destroy Cube
@@ -74,6 +77,7 @@ public class CubeBehaviorScript : MonoBehaviour
 	//Set the initial cube settings
 	private void CubeSettings()
 	{
+
 		mOrbitAnchor = Camera.main.transform;
 
 		// defining the orbit direction
@@ -95,14 +99,21 @@ public class CubeBehaviorScript : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		RotateCube();
 
-		// scale cube if needed
-		if (!mIsCubeScaled){
-			ScaleObj();
+		if (Camera.main.GetComponentInParent<PlayerScript> ().isPaused == false) {
+
+			CheckDistance ();
+			RotateCube ();
+			float step = speed * Time.deltaTime;
+			transform.position = Vector3.MoveTowards (transform.position, target.position, step);
+
+			// scale cube if needed
+			if (!mIsCubeScaled) {
+				ScaleObj ();
+			}
 		}
 	}
-
+		
 	/*
 		Makes the cube rotate around a anchor point
 		and rotate arount its own axis

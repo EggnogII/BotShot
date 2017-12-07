@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿//Created by Imran Irfan
+//Deprecated
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
@@ -13,7 +15,7 @@ public class SpawnScript : MonoBehaviour
 	public int mTotalCubes = 10;
 
 	// Time to spawn
-	public float mTimeToSpawn = 1f;
+	public float mTimeToSpawn = 0.8f;
 
 	// Hold all the cubes
 	private GameObject[] mCubes;
@@ -54,6 +56,7 @@ public class SpawnScript : MonoBehaviour
 	{
 		// spawn the element on a random position, inside a imaginary sphere
 		GameObject cube = Instantiate(mCubeObj, (Random.insideUnitSphere*4) + transform.position, transform.rotation) as GameObject;
+
 		// define a random scale for the cube
 		float scale = Random.Range(0.5f, 2f);
 

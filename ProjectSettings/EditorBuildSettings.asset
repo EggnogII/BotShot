@@ -4,4 +4,31 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/StartMenuProper.unity
+    guid: 6376d8e5feed4ea4d9715e08c992eebe
+  - enabled: 1
+    path: Assets/Scenes/ShootMain.unity
+    guid: 64901460b69c343519e932e018197da8
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/GameOverHighScore.unity
+    guid: c261fef22eacf4f40a73856da0b31da9
+  - enabled: 1
+    path: Assets/Scenes/ShootMainEasy.unity
+    guid: 048659e27f7812d4ca57ddde1ebb60f4
+  - enabled: 1
+    path: Assets/Scenes/ShootMainMedium.unity
+    guid: 62d3531f6c6cc2e47872928f18197595
+  - enabled: 1
+    path: Assets/Scenes/ShootMainHard.unity
+    guid: 920d8d6aaa3ea9a4f95423b2e032efb3
+  - enabled: 1
+    path: Assets/Scenes/HowToPlay.unity
+    guid: d692a25eaece5ae4ea111a1dc3df948d
+  - enabled: 1
+    path: Assets/Scenes/HowToPlayContinued.unity
+    guid: 4c29154c4f347c140836c62caf2a2967
